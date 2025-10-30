@@ -56,8 +56,7 @@ color = "Type"
 ```
 
 
-
-# Boxplot of Distance to Parking by Type
+ Boxplot of Distance to Parking by Type
 
 ```{r}
 ggplot(picnic, aes(x = TYPE, y = Distance_to_Parking)) +
@@ -75,9 +74,10 @@ ggplot(picnic, aes(x = TYPE, y = Distance_to_Parking)) +
 
 
 
-# Simple linear model: does Type predict Distance_to_Parking?
+# Simple linear model
+
 ```{r}
-# Simple linear model: does Type predict Distance_to_Parking?
+# Does Type predict Distance_to_Parking?
 
 m <- lm(Distance_to_Parking ~ TYPE, data = picnic)
 summary(m)
