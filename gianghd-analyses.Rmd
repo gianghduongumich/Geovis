@@ -19,6 +19,7 @@ Each analysis is an `.Rmd` that you knit to `.html`. After knitting, link to it 
 - **Open the analysis:** [assignment-pinic.html](assignment-pinic.html)
 - **What it shows:** Summary of picnic grounds dataset, boxplot of distance to parking by picnic type, linear model of distance to parking vs picnic type, and a geovisualization of picnic locations.
 - **Skill:** R Markdown, ggplot2 visualization, linear modeling, sf spatial data handling, and interpretation of regression output.
+
 ---
 
 ## Add more analyses
