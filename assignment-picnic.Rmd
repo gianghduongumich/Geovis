@@ -21,7 +21,7 @@ library(sf)
 library(dplyr)
 library(ggplot2)
 library(leaflet)
-picnic <- st_read("/Users/gianghuongduong/Downloads/Fall25/Geovis2/personal_site/PicnicGrounds_-2604548030838180929/PicnicGrounds.shp")
+picnic <- st_read("/Users/gianghuongduong/Downloads/Fall25/Geovis2/Geovis/docs/PicnicGrounds_-2604548030838180929/PicnicGrounds.shp")
 glimpse(picnic)
 
 

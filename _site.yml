@@ -1,15 +1,17 @@
 name: "my-personal-site"
 title: "Huong Giang Duong - Portfolio"
 output_dir: "docs"
+
 navbar:
   title: "Huong Giang Duong"
   left:
     - text: "About"
       href: index.html
     - text: "Analyses"
-      href: analyses.html
+      href: gianghd-analyses.html
     - text: "Contact"
       href: contact.html
+
 output:
   html_document:
     theme: flatly
