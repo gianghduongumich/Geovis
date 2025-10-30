@@ -15,9 +15,9 @@ Welcome to my personal site. This homepage is written in **R Markdown** and will
 - I am interested in: _urban planning, climate change, and sustainability_.
 - This site will grow as I add more `.Rmd` analyses under **Analyses**.
 
-## A photo of me (replace with your own)
+## A photo of me 
 
-Place your images in the `img/` folder and reference them like this:
+
 
 ```{r echo=FALSE, out.width='300px'}
 knitr::include_graphics('img/giang.png')

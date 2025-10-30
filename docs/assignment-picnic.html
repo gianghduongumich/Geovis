@@ -373,15 +373,15 @@ picnic &lt;- st_read(&quot;/Users/gianghuongduong/Downloads/Fall25/Geovis2/Geovi
 <pre class="r"><code>glimpse(picnic)</code></pre>
 <pre><code>## Rows: 612
 ## Columns: 9
-## $ GISID    &lt;chr&gt; &quot;GIS0007122&quot;, &quot;GIS0007123&quot;, &quot;GIS0007124&quot;, &quot;GIS0007125&quot;, &quot;GIS0…
-## $ DETAIL   &lt;chr&gt; &quot;Livermore Overlook Picnic Area&quot;, &quot;Maple Nook Picnic&quot;, &quot;Brida…
-## $ TYPE     &lt;chr&gt; &quot;Primitive Family Picnic Area&quot;, &quot;Primitive Family Picnic Area…
-## $ SUBCLASS &lt;chr&gt; &quot;Picnic Areas&quot;, &quot;Picnic Areas&quot;, &quot;Picnic Areas&quot;, &quot;Picnic Areas…
-## $ UNITNBR  &lt;chr&gt; &quot;203&quot;, &quot;203&quot;, &quot;203&quot;, &quot;203&quot;, &quot;203&quot;, &quot;203&quot;, &quot;203&quot;, &quot;203&quot;, &quot;203&quot;…
-## $ UNITNAME &lt;chr&gt; &quot;Mount Diablo SP&quot;, &quot;Mount Diablo SP&quot;, &quot;Mount Diablo SP&quot;, &quot;Mou…
-## $ SHARE    &lt;chr&gt; &quot;Public&quot;, &quot;Public&quot;, &quot;Public&quot;, &quot;Public&quot;, &quot;Public&quot;, &quot;Public&quot;, &quot;…
-## $ GlobalID &lt;chr&gt; &quot;abfbd6d7-bf4a-4f2b-ad87-aa35330efa15&quot;, &quot;e4aafe26-33d7-468d-9…
-## $ geometry &lt;POINT [m]&gt; POINT (-13573276 4559993), POINT (-13573371 4560478), P…</code></pre>
+## $ GISID    [3m[38;5;246m&lt;chr&gt;[39m[23m &quot;GIS0007122&quot;[38;5;246m, [39m&quot;GIS0007123&quot;[38;5;246m, [39m&quot;GIS0007124&quot;[38;5;246m, [39m&quot;GIS000712…
+## $ DETAIL   [3m[38;5;246m&lt;chr&gt;[39m[23m &quot;Livermore Overlook Picnic Area&quot;[38;5;246m, [39m&quot;Maple Nook Picnic…
+## $ TYPE     [3m[38;5;246m&lt;chr&gt;[39m[23m &quot;Primitive Family Picnic Area&quot;[38;5;246m, [39m&quot;Primitive Family Pi…
+## $ SUBCLASS [3m[38;5;246m&lt;chr&gt;[39m[23m &quot;Picnic Areas&quot;[38;5;246m, [39m&quot;Picnic Areas&quot;[38;5;246m, [39m&quot;Picnic Areas&quot;[38;5;246m, [39m&quot;Pic…
+## $ UNITNBR  [3m[38;5;246m&lt;chr&gt;[39m[23m &quot;203&quot;[38;5;246m, [39m&quot;203&quot;[38;5;246m, [39m&quot;203&quot;[38;5;246m, [39m&quot;203&quot;[38;5;246m, [39m&quot;203&quot;[38;5;246m, [39m&quot;203&quot;[38;5;246m, [39m&quot;203&quot;[38;5;246m, [39m&quot;20…
+## $ UNITNAME [3m[38;5;246m&lt;chr&gt;[39m[23m &quot;Mount Diablo SP&quot;[38;5;246m, [39m&quot;Mount Diablo SP&quot;[38;5;246m, [39m&quot;Mount Diablo …
+## $ SHARE    [3m[38;5;246m&lt;chr&gt;[39m[23m &quot;Public&quot;[38;5;246m, [39m&quot;Public&quot;[38;5;246m, [39m&quot;Public&quot;[38;5;246m, [39m&quot;Public&quot;[38;5;246m, [39m&quot;Public&quot;[38;5;246m, [39m&quot;P…
+## $ GlobalID [3m[38;5;246m&lt;chr&gt;[39m[23m &quot;abfbd6d7-bf4a-4f2b-ad87-aa35330efa15&quot;[38;5;246m, [39m&quot;e4aafe26-33…
+## $ geometry [3m[38;5;246m&lt;POINT [m]&gt;[39m[23m POINT (-13573276 4559993)[38;5;246m, [39mPOINT (-13573371 45…</code></pre>
 <pre class="r"><code>#Add a simulated column for Distance to Parking (meters) since the dataset doesn&#39;t have one
 set.seed(123)
 picnic &lt;- picnic %&gt;%
@@ -425,13 +425,20 @@ summary(m)</code></pre>
 ## -240.071 -111.571   -9.103  112.329  272.316 
 ## 
 ## Coefficients:
-##                                  Estimate Std. Error t value Pr(&gt;|t|)    
-## (Intercept)                       284.000     73.556   3.861 0.000125 ***
-## TYPEDeveloped Family Picnic Area    6.071     73.928   0.082 0.934578    
-## TYPEDeveloped Group Picnic Area   -32.773     75.013  -0.437 0.662336    
-## TYPEPrimitive Family Picnic Area   -9.329     74.238  -0.126 0.900038    
-## TYPEPrimitive Group Picnic Area   -71.316     79.150  -0.901 0.367936    
-## TYPEUndefined                     -46.897     75.434  -0.622 0.534381    
+##                                  Estimate Std. Error t value Pr(&gt;|t|)
+## (Intercept)                       284.000     73.556   3.861 0.000125
+## TYPEDeveloped Family Picnic Area    6.071     73.928   0.082 0.934578
+## TYPEDeveloped Group Picnic Area   -32.773     75.013  -0.437 0.662336
+## TYPEPrimitive Family Picnic Area   -9.329     74.238  -0.126 0.900038
+## TYPEPrimitive Group Picnic Area   -71.316     79.150  -0.901 0.367936
+## TYPEUndefined                     -46.897     75.434  -0.622 0.534381
+##                                     
+## (Intercept)                      ***
+## TYPEDeveloped Family Picnic Area    
+## TYPEDeveloped Group Picnic Area     
+## TYPEPrimitive Family Picnic Area    
+## TYPEPrimitive Group Picnic Area     
+## TYPEUndefined                       
 ## ---
 ## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
 ## 
