@@ -1,0 +1,89 @@
+---
+title: "Assignment 1: Coding Showcase"
+author: "Huong Giang Duong"
+output: html_document
+---
+
+```{r setup_assignment, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+```
+
+# Overview
+This is a short analysis demonstrating basic skills: reading spatial data, plotting, and simple analysis.
+
+# Data & methods
+
+We use the PicnicGrounds.shp dataset at https://lab.data.ca.gov/
+
+
+```{r}
+library(sf)
+library(dplyr)
+library(ggplot2)
+library(leaflet)
+picnic <- st_read("/Users/gianghuongduong/Downloads/Fall25/Geovis2/personal_site/PicnicGrounds_-2604548030838180929/PicnicGrounds.shp")
+glimpse(picnic)
+
+
+```
+
+
+
+
+```{r}
+#Add a simulated column for Distance to Parking (meters) since the dataset doesn't have one
+set.seed(123)
+picnic <- picnic %>%
+mutate(Distance_to_Parking = round(runif(nrow(.), 50, 500), 0))
+
+```
+
+
+
+# Visualization
+Scatter plot Sepal.Length vs Sepal.Width colored by Species
+
+```{r}
+ggplot(picnic) +
+geom_sf(aes(color = TYPE), size = 2, alpha = 0.7) +
+theme_minimal() +
+labs(
+title = "Picnic Grounds Locations",
+color = "Type"
+)
+
+
+```
+
+
+
+# Boxplot of Distance to Parking by Type
+
+```{r}
+ggplot(picnic, aes(x = TYPE, y = Distance_to_Parking)) +
+  geom_boxplot(fill = "lightblue") +
+  theme_minimal() +
+  labs(
+    title = "Distance to Parking by Picnic Type",
+    y = "Distance to Parking (m)",
+    x = "Picnic Type"
+  ) +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
+
+```
+
+
+
+
+# Simple linear model: does Type predict Distance_to_Parking?
+```{r}
+# Simple linear model: does Type predict Distance_to_Parking?
+
+m <- lm(Distance_to_Parking ~ TYPE, data = picnic)
+summary(m)
+
+
+```
+
+# Reflection
+In this assignment, I explored the spatial distribution of picnic grounds and examined how the distance to parking varies by picnic type. The linear model results show that picnic type does not have a strong influence on distance to parking, as indicated by low R-squared (0.026) and mostly non-significant coefficients. This suggests that, in this dataset, distances to parking are relatively similar across different picnic types. Creating the geospatial plot helped visualize the locations and diversity of picnic grounds, while the boxplot and model provided insight into variation in accessibility. One limitation is that the Distance_to_Parking variable was simulated, so the analysis is illustrative rather than based on real measurements.
