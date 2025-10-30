@@ -1,0 +1,30 @@
+---
+title: "Analyses & Projects"
+output: html_document
+---
+
+```{r setup_analyses, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
+```
+
+# How to use this page
+
+Each analysis is an `.Rmd` that you knit to `.html`. After knitting, link to it from here.
+
+## Featured: Assignment 1 - Pinic Grounds Dataset
+
+**Title:** Picnic Grounds Analysis
+**File:** `assignment-pinic.Rmd` → `assignment-pinic.html`
+
+- **Open the analysis:** [assignment-pinic.html](assignment-pinic.html)
+- **What it shows:** Summary of picnic grounds dataset, boxplot of distance to parking by picnic type, linear model of distance to parking vs picnic type, and a geovisualization of picnic locations.
+- **Skills:** R Markdown, ggplot2 visualization, linear modeling, sf spatial data handling, and interpretation of regression output.
+---
+
+## Add more analyses
+
+1. Copy `template-analysis.Rmd` to a new filename (e.g., `my-analysis.Rmd`).  
+2. Knit to generate `my-analysis.html`.  
+3. Add a bullet/link here:
+
+- _Example placeholder_: [my-analysis.html](my-analysis.html) — short description.
