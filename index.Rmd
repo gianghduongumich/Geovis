@@ -7,7 +7,8 @@ output: html_document
 knitr::opts_chunk$set(echo = FALSE)
 ```
 
-# Hello! I'm Huong Giang Duong. I’m a student specializing in Geospatial Data Science. This website showcases my projects and assignments for the Geovisualisation (EAS 648) course.
+# Hello! 
+I'm Huong Giang Duong. I’m a student specializing in Geospatial Data Science. This website showcases my projects and assignments for the Geovisualisation (EAS 648) course.
 
 Welcome to my personal site. This homepage is written in **R Markdown** and will be published on **GitHub Pages**.
 
